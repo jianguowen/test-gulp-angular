@@ -1,0 +1,113 @@
+.sidebar-inner {
+  height: 100%;
+  overflow-y: auto;
+  width: 268px;
+  >.main-menu {
+    padding-left: 0;
+    margin: 20px 0;
+    >li {
+      >a {
+        padding: 14px 20px 14px 52px;
+        display: block;
+        color: #4C4C4C;
+        font-weight: 500;
+        position: relative;
+        &:hover {
+          color: #262626;
+          background-color: #f7f7f7;
+        }
+        > i {
+          position: absolute;
+          left: 16px;
+          font-size: 20px;
+          top: 0;
+          width: 25px;
+          text-align: center;
+          padding: 13px 0;
+        }
+      }
+      &.active {
+        a {
+          color: #262626;
+          background-color: #F4F4F4;
+        }
+      }
+    }
+    .sub-menu {
+      >a {
+        position: relative;
+        &:after,
+        &:before {
+          position: absolute;
+          top: 12px;
+          color: #575757;
+          font-family: 'Glyphicons Halflings';
+          font-size: 12px;
+          right: 15px;
+          transition: all 250ms;
+          backface-visibility: hidden;
+        }
+        &:after {
+          content: "\e259";
+          transform: scale(0);
+        }
+        &:before {
+          content: "\e258";
+          transform: scale(1);
+        }
+      }
+      .sub-menu {
+        >a:after,
+        >a:before {
+          top: 5px;
+        }
+      }
+      &.toggled {
+        > a:before {
+          transform: scale(0);
+        }
+        > a:after {
+          transform: scale(1);
+        }
+      }
+      ul {
+        display: none;
+        >li {
+          >a {
+            color: #7f7f7f;
+            padding: 8px 20px 8px 50px;
+            font-weight: 500;
+            display: block;
+            &:hover,
+            &.active {
+              color: #000;
+            }
+          }
+          &:first-child {
+            a {
+              padding-top: 14px;
+            }
+          }
+          &:last-child {
+            a {
+              padding-bottom: 16px;
+            }
+          }
+          ul {
+            font-size: 12px;
+            margin: 10px 0;
+            background-color: #f7f7f7;
+          }
+        }
+      }
+      &.active {
+        ul {
+          display: block
+        }
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}

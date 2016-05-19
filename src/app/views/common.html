@@ -1,0 +1,7 @@
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'app/template/header.html'"></header>
+<section id="main">
+  <aside id="sidebar" data-ng-include="'app/template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+  <!-- <aside id="chat" data-ng-include="'app/template/chat.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.right === true }"></aside> -->
+  <section id="content" class="page-view" data-ui-view data-ng-class="{'toggled': mactrl.sidebarToggle.left === false }"></section>
+</section>
+<!-- <footer id="footer" data-ng-include="'app/template/footer.html'"></footer> -->

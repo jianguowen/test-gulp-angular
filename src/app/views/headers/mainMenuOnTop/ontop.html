@@ -1,0 +1,15 @@
+<header id="header" data-current-skin={{mactrl.currentSkin}} data-ng-include="'app/template/header.html'"></header>
+<section id="main">
+  <aside id="sidebar" data-ng-include="'app/template/sidebar-left.html'" data-ng-class="{ 'toggled': mactrl.sidebarToggle.left === true }"></aside>
+  <section id="content" class="page-view" data-ui-view data-ng-class="{'toggled': mactrl.sidebarToggle.left === false }">
+    <div class="container">
+      <div class="block-header">
+        <h2>Image Logo <small>You can also include an image logo instead of texts</small></h2>
+      </div>
+      <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body card-padding"></div>
+      </div>
+    </div>
+  </section>
+</section>
