@@ -7,6 +7,12 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       controller: 'LoginController',
       controllerAs: 'lc'
     })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'app/views/register/register.html',
+      controller: 'RegisterController',
+      controllerAs: 'rc'
+    })
     .state('home', {
       url: '/home',
       templateUrl: 'app/views/home/home.html'

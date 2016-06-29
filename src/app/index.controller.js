@@ -18,7 +18,7 @@ export class MainController {
 
   sidebarStat(event) {
     let mactrl = this;
-
+    mactrl.$log.log(event);
   }
 
   logout(){
