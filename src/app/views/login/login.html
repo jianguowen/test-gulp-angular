@@ -7,7 +7,7 @@
       <div class="form-dialog-content">
         <div class="form-group username-block">
           <label for="username" class="control-label">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <span class="fa fa-user" aria-hidden="true"></span>
           </label>
           <div data-ng-class="{'has-error': loginForm.username.$invalid}">
             <input type="text" class="form-control" id="username" name="username" placeholder="username" data-ng-model="lc.user.name" data-ng-pattern="/^\w{6,16}$/" data-ng-change="lc.getPassword()">
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group password-block">
           <label for="password" class="control-label">
-            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+            <span class="fa fa-key" aria-hidden="true"></span>
           </label>
           <div data-ng-class="{'has-error': loginForm.password.$invalid}">
             <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-ng-model="lc.user.password" data-ng-pattern="/^\w{6,16}$/">
@@ -48,7 +48,7 @@
         </div>
         <div class="form-group">
           <p class="text">
-            <a class="btn btn-link pull-left">还没有帐号？点击这里去注册</a>
+            <a class="btn btn-link pull-left" data-ui-sref="register">还没有帐号？点击这里去注册</a>
             <a class="btn btn-link pull-right">忘记密码？</a>
           </p>
         </div>

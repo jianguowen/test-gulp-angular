@@ -16,7 +16,7 @@ export class LoginController {
       captch: ''
     }
 
-    lc.checkCodeUrl = "http://192.168.1.176:5800/merServPlat/captcha.json?type=login";
+    lc.checkCodeUrl = "http://192.168.1.176:4800/merServPlat/captcha.json?type=login";
 
   }
 
@@ -28,7 +28,9 @@ export class LoginController {
       username: this.user.username,
       password: this.LoginService.encrypt(this.user.password)
     };
+    this.$log.log(form)
     var isRight = this.LoginService.sendrequest(this.user);
+    this.$log.log(isRight)
 
   }
   getPassword() {
