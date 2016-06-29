@@ -36,6 +36,26 @@
 // injector
 // endinjector
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+*:focus{
+  outline: none !important;
+}
+
+/************************
+ * 屏幕自适应 STYLES ROLE
+*************************/
+
+@media screen and (max-width: 768px) {
+  html {
+    width: 768px;
+  }
+}
+
 /**
  *  START COMMONS STYLES  LAYOUT
  */
@@ -87,8 +107,10 @@ li {
     left: 268px;
     top: 65px;
     overflow: hidden;
+    transition: all 300ms;
     .container {
       margin: 15px auto;
+      width: 100%;
       >.block-header {
         padding: 0 22px;
         margin-bottom: 25px;
