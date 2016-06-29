@@ -11,7 +11,6 @@ export function ToggleSidebarDirective() {
   return directive;
 
   function linkFunc(scope, element) {
-    console.log('toggleSidebar');
     element.on('click', function() {
       if (element.data('target') === 'mainmenu') {
         if (scope.modelLeft === false) {
