@@ -1,8 +1,14 @@
 export function routerConfig($stateProvider, $urlRouterProvider) {
   'ngInject';
   $stateProvider
+    .state('login', {
+      url: '/login',
+      templateUrl: 'app/views/login/login.html',
+      controller: 'LoginController',
+      controllerAs: 'lc'
+    })
     .state('home', {
-      url: '/',
+      url: '/home',
       templateUrl: 'app/views/home/home.html'
     })
     .state('headers', {
@@ -26,5 +32,5 @@ export function routerConfig($stateProvider, $urlRouterProvider) {
       templateUrl: 'app/views/typography/typography.html'
     });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/login');
 }

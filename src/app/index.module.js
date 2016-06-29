@@ -5,10 +5,13 @@ import { routerConfig } from './index.route';
 import { runBlock } from './index.run';
 
 import { MainController } from './index.controller';
+import { LoginController } from '../app/views/login/login.controller';
 
 import { ToggleSidebarDirective } from '../app/components/toggleSidebar/toggleSidebar.directive';
 import { ToggleSubmenuDirective } from '../app/components/toggleSubmenu/toggleSubmenu.directive';
 import { ChangeLayoutDirective } from '../app/components/changeLayout/changeLayout.directive';
+
+import { LoginService } from '../app/views/login/login.service';
 
 
 angular.module('demoGulpAngular', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr'])
@@ -18,6 +21,8 @@ angular.module('demoGulpAngular', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanit
   .config(routerConfig)
   .run(runBlock)
   .controller('MainController', MainController)
+  .controller('LoginController', LoginController)
   .directive('toggleSidebar',ToggleSidebarDirective)
   .directive('toggleSubmenu',ToggleSubmenuDirective)
-  .directive('changeLayout',ChangeLayoutDirective);
+  .directive('changeLayout',ChangeLayoutDirective)
+  .service('LoginService', LoginService);
