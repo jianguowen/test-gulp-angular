@@ -1,0 +1,72 @@
+<div class="register-container" onselectstart="return false;">
+  <div class="form-dialog">
+    <form name="registerForm" role="form" ng-keydown="rc.keydown($event)">
+      <div class="form-dialog-title">
+        用户注册
+      </div>
+      <div class="form-dialog-content">
+        <div class="form-group username-block">
+          <label for="username" class="control-label clearfix">
+            <span class="fa fa-asterisk"></span>用户名
+          </label>
+          <div class="clearfix" data-ng-class="{'has-error': registerForm.username.$invalid}">
+            <input type="text" id="username" name="username" placeholder="请输入用户名" data-ng-model="rc.register.name" data-ng-pattern="/^\w{6,16}$/" data-ng-change="rc.isUsernameExit()">
+          </div>
+          <p class="help-block" data-ng-show="registerForm.username.$invalid">用户名由6到16位的大小写字母，数字，下划线组成</p>
+          <p data-ng-show="rc.result.usernameIsExit">该用户名已经被使用了</p>
+        </div>
+        <div class="form-group password-block">
+          <label for="password" class="control-label clearfix">
+            <span class="fa fa-asterisk"></span>密码
+          </label>
+          <div class="clearfix" data-ng-class="{'has-error': registerForm.password.$invalid}">
+            <input type="password" id="password" name="password" placeholder="请输入密码" data-ng-model="rc.register.password" data-ng-pattern="rc.pattern.user">
+          </div>
+          <p class="help-block" data-ng-show="registerForm.password.$invalid">密码由6到16位的大小写字母，数字，下划线组成</p>
+        </div>
+        <div class="form-group repeatPassword-block">
+          <label for="password" class="control-label clearfix">
+            <span class="fa fa-asterisk"></span>确认密码
+          </label>
+          <div class="clearfix" data-ng-class="{'has-error': registerForm.password.$invalid}">
+            <input type="password" id="repeatPassword" name="repeatPassword" placeholder="请确认密码" data-ng-model="rc.register.repeatPassword" data-ng-pattern="rc.pattern.user">
+          </div>
+          <p class="help-block" data-ng-hide="registerForm.repeatPassword.$pristine || (rc.register.repeatPassword === rc.register.password)">密码不一致</p>
+        </div>
+        <div class="form-group mobile-block">
+          <label for="password" class="control-label clearfix">
+            <span class="fa fa-asterisk"></span>手机号
+          </label>
+          <div class="clearfix" data-ng-class="{'has-error': registerForm.mobile.$invalid}">
+            <input type="text" id="mobile" name="mobile" placeholder="请输入手机号" data-ng-model="rc.register.mobile" data-ng-pattern="rc.pattern.mobile" data-ng-change="rc.isMobileExit()">
+            <span data-ng-click="rc.sendCheckCode()">发送校验码</span>
+          </div>
+          <p class="help-block" data-ng-show="registerForm.mobile.$invalid">请输入正确的手机号</p>
+          <p data-ng-show="rc.result.mobileIsExit">该手机号已经被使用了</p>
+        </div>
+        <div class="form-group checkCode-block">
+          <label for="password" class="control-label clearfix">
+            <span class="fa fa-asterisk"></span>校验码
+          </label>
+          <div class="clearfix" data-ng-class="{'has-error': registerForm.checkCode.$invalid}">
+            <input type="text" id="checkCode" name="checkCode" placeholder="请输入校验码" data-ng-model="rc.register.checkCode">
+          </div>
+          <p class="help-block" data-ng-show="rc.result.checkCodeError">校验码错误</p>
+        </div>
+      </div>
+      <div class="form-dialog-footer">
+        <div class="form-group">
+          <div>
+            <button type="submit" class="btn btn-default btn-block" data-ng-click="rc.saveUserInfo()">确认
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <p class="text">
+            <a class="btn btn-link pull-left" data-ui-sref="login">已经有账号了？立刻去登录</a>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
