@@ -14,12 +14,14 @@ export class MainController {
     };
 
     this.layoutType = localStorage.getItem('ma-layout-status')
-
   }
 
   sidebarStat(event) {
     let mactrl = this;
-    console.log(event.currentTarget);
 
+  }
+
+  logout(){
+    this.$state.go('login');
   }
 }
